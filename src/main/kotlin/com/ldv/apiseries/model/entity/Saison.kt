@@ -14,13 +14,11 @@ class Saison(
     var num: Int,
     var nom: String?,
     var annee: Int,
-    var nombreEpisode: Int,
+    var nombreEpisode: Int, //nombreEpisode
 
     // Relation Many-to-One avec Serie (chaque saison appartient à une série)
     @ManyToOne
     @JoinColumn(name = "serie_id")
     var serie: Serie? = null
 ){
-
-
 }

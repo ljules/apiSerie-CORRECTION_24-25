@@ -29,13 +29,23 @@ entity "**saison**" as saison #goldenrod {
     **<<FK>> serie_id** : INT
 }
 
+entity "**episode**" as episode #gold {
+    **<<PK>> id** : INT
+    **num** : INT
+    **titre** : VARCHAR(255)
+    **duree** : INT
+    **date** : DATE
+    --
+    **<<FK>> saison_id** : INT
+}
+
 
 ' DEFINITION DES RELATIONS :
 ' --------------------------
 serie ||--o{ saison : "series_id:id"
 serie ||--o{ genre_series : "series_id:id"
 genre ||--o{ genre_series : "genre_id:id"
-
+saison ||--|{ episode : "saison_id:id"
 
 ' COMMENTAIRES :
 ' --------------
